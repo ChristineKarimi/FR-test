@@ -30,10 +30,10 @@ import { NewItemComponent } from './new-item/new-item.component';
     MatChipsModule,
     MatButtonModule,
     RouterModule.forRoot([
-      // {
-      //   path: 'new-user',
-      //   component: NewUserComponent
-      // },
+      {
+        path: 'new-item',
+        component: NewItemComponent
+      },
       // {
       //   path: 'user-list',
       //   component: UserListComponent
