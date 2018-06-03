@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { NewItemComponent } from './new-item/new-item.component';
+import { ItemListComponent } from './item-list/item-list.component';
 
 
 
@@ -18,6 +19,7 @@ import { NewItemComponent } from './new-item/new-item.component';
   declarations: [
     AppComponent,
     NewItemComponent,
+    ItemListComponent,
     
   ],
   imports: [
@@ -34,10 +36,10 @@ import { NewItemComponent } from './new-item/new-item.component';
         path: 'new-item',
         component: NewItemComponent
       },
-      // {
-      //   path: 'user-list',
-      //   component: UserListComponent
-      // }
+      {
+        path: 'item-list',
+        component: ItemListComponent
+      }
     ])
   ],
   providers: [],
