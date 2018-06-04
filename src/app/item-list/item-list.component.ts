@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { Store } from '../store';
+
 
 @Component({
   selector: 'app-item-list',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit {
+
+  items = Store;
 
   constructor() { }
 

@@ -1,12 +1,15 @@
 
  <!-- Side navigation -->
- 
+ <div class="main">
  <div class="sidenav">
-  <a href="/new-item">Create Item</a>
-  <a href="/item-list">Item list</a>
+  <a routerLink="/new-item">Create Item</a>
+  <a routerLink="/item-list">Item list</a>
 </div>
 
 <!-- Page content -->
 <div class="body">
-  <app-new-item></app-new-item>
+  <router-outlet></router-outlet>
+  
+
 </div> 
+</div>

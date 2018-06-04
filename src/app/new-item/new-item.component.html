@@ -1,22 +1,24 @@
-<div class="main-input">
+<form class="form-group" [formGroup]='itemForm'>
+  <div class="main-input">
   <div class="inputs client-photo">
-    <p>Client Photo</p>
+    <label>Client Photo</label>
     <img src="../../assets/images/ppic.png" alt="">
   </div>
+  
 
   <div class="inputs first-name">
     <label>First Name</label>
-    <input type="text">
+    <input type="text" #firstname formControlName="firstName">
   </div>
 
   <div class="inputs last-name">
     <label>Last Name</label>
-    <input type="text">
+    <input type="text" #lastname formControlName="lastName">
   </div>
 
   <div class="inputs rating-name">
     <label>Rating</label>
-    <select>
+    <select #rating formControlName="rating">
       <option value=1>1</option>
       <option value=2>2</option>
       <option value=3>3</option>
@@ -27,7 +29,7 @@
 
   <div class="inputs category">
     <label>Category</label>
-    <select>
+    <select #category formControlName="category">
       <option value="sports">Running</option>
       <option value="leisure">Jogging</option>
     </select>
@@ -36,7 +38,7 @@
   <div class="inputs sub-category">
     <label>Sub Category</label>
     <mat-form-field class="md-input">
-      <mat-select class="md-border" [formControl]="subcategory" multiple>
+      <mat-select class="md-border" formControlName="subCategory" #subcategory multiple>
         <mat-option *ngFor="let subcategory of subcategoryList" [value]="subcategory">{{subcategory}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -45,11 +47,12 @@
 
   <div class="inputs amount">
     <label>Amount</label>
-    <input type="number">
+    <input type="number" #amount formControlName="amount">
   </div>
 
   <div class="inputs button">
     <label></label>
-    <button>Submit</button>
+    <button on-click="saveItem(firstname, lastname, rating, category, subcategory, amount)">Submit</button>
   </div>
-</div>
+  </div>
+  </form>

@@ -1,0 +1,26 @@
+/*
+  ========================================
+  TABLE
+  ========================================
+*/
+table{
+   width: 70%;
+    margin-left: 80px;
+  }
+  
+  td, th {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px;
+    margin-left: 80px;
+  }
+  
+  .user-list h1, p{
+    padding: 30px;
+    margin: 0;
+    margin-left: 80px;
+  }
+  
+  .user-list p{
+    padding-bottom: 50px;
+  }
