@@ -19,11 +19,11 @@ export class ItemListComponent implements OnInit {
   ngOnInit() {
     var single = this.userService.getData();
     single.snapshotChanges().subscribe(item => {
-      this.userList = [];
+      this.itemList = [];
       item.forEach(element => {
         var all = element.payload.toJSON();
         all["$key"] = element.key; 
-        this.userList.push(all as User);
+        this.itemList.push(all as User);
       })
     });
   }
