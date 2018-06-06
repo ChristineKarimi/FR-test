@@ -31,6 +31,11 @@ import { ItemListComponent } from './item-list/item-list.component';
     MatChipsModule,
     MatButtonModule,
     RouterModule.forRoot([
+
+      {
+        path: '',
+        component: ItemListComponent
+      },
       {
         path: 'new-item',
         component: NewItemComponent
