@@ -1,25 +1,76 @@
-<div class="user-list">
+<div class="item-list">
     <h1>Item List</h1>
     <p>A list of all your items</p>
   
     <table>
       <tr>
-        <th>Created Date</th>
+        <th>Time Created</th>
         <th>Client</th>
         <th>Rating</th>
         <th>Category</th>
         <th>Sub Category</th>
-        <th>Date</th>
         <th>Amount</th>
       </tr>
-  <li *ngFor="let item of items">
   
+      <tr *ngFor="let item of items" (click)="open(content)" (click)="itemDetails(item)">
+
+
         <td>{{ item.timeCreated }}</td>
-        <td>{{item.firstname}} {{item.lastname}}</td>
+        <td><span class="table-img"><img src="../../assets/images/ppic.png" alt=""> </span>
+           {{item.firstname}} {{item.lastname}}</td>
+
         <td>{{item.rating}}</td>
         <td>{{item.category}}</td>
         <td>{{item.subcategory}}</td>
         <td>{{item.amount}}</td>
-  </li>
+
+        </tr>
+  
     </table>
   </div>
+
+  <!-- <div class="col-md-6 col-md-offset-3">
+        <td>{{item.amount}}</td>
+      <p>{{bodyText}}</p>
+      <button (click)="openModal('custom-modal-1')">Open Modal</button>
+  </div> -->
+
+  <ng-template #content let-c="close" let-d="dismiss" class="modal-dialog modal-xl">
+    <header class="container">
+      <div class="top-modal">
+        <h4 class="modal-title">Item Details</h4>
+        <p>May 18, 2018, 1:59:18PM</p>
+      </div>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </header>
+    <hr>
+    <div class="modal-body container">
+  
+      <div class="row">
+        <div class="col vl-right">
+            <p>{{firstname}} <span> {{lastname}}</span></p>
+            <small><span><strong>Rating:</strong></span> {{rating}}</small>
+        </div>
+        <div class="col-6 mid-data vl-right">
+          <p><span class="data-title">First Name:</span> <span>{{firstname}}</span></p>
+  
+          <p><span class="data-title">Last Name:</span> <span>{{lastname}}</span></p>
+  
+          <p><span class="data-title">Rating:</span> <span>{{rating}}</span></p>
+  
+          <p><span class="data-title">Category:</span> <span>{{category}}</span></p>
+  
+          <p><span class="data-title">Primary Sub Category:</span> <span>{{subcategory}}</span></p>
+  
+          <p><span class="data-title">Amount(KES):</span> <span>{{amount}}</span></p>
+        </div>
+        <div class="col button-left">
+            <button class="btn-default button" >EDIT</button>
+        </div>
+      </div>
+  
+    </div>
+  </ng-template>
+  

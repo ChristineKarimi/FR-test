@@ -27,6 +27,8 @@
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
+    width: 300px;
+    padding-right: 200px;
     color: #2a4849;
     background-color: #999999;
 }

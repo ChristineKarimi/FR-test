@@ -30,10 +30,11 @@ export class NewItemComponent implements OnInit {
   //Adding form builder service to constructor
   // constructor(private fb: FormBuilder) { }
 
-  saveItem(firstname: HTMLInputElement, lastname: HTMLInputElement, rating: HTMLInputElement, category: HTMLInputElement, subcategory: HTMLInputElement, amount: HTMLInputElement,timeCreated?:number): boolean {
-
-    let t_secs = new Date()
-    let t_day:number = t_secs.getTime()/1000;
+  saveItem(firstname: HTMLInputElement, lastname: HTMLInputElement, rating: HTMLInputElement, category: HTMLInputElement, subcategory: HTMLInputElement, amount: HTMLInputElement,timeCreated?:string): boolean {
+    
+    let t_secs = new Date();
+    // let t_day:number = t_secs.getTime()/1000;
+    let t_day = new Date().toLocaleTimeString();
 
     this.item.push(new Item(firstname.value, lastname.value, rating.value, category.value, subcategory.value, amount.value,t_day));
 
@@ -49,15 +50,7 @@ export class NewItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    //create datamodel 
-    // this.myForm = this.fb.group({
-    //   firstname: '',
-    //   lastname: '',
-    //   rating: '',
-    //   category: '',
-    //   subcategory: '',
-    //   amount: ''
-    // })
+ 
 
   }
 
